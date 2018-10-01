@@ -1,0 +1,14 @@
+On evControlEvent
+	Calculate lvRow as pInfo
+	
+	;  Convert the data from JSON to a List
+	Do OJSON.$jsontolistorrow(lvRow.data) Returns lvDataList
+	
+	;  "Default" event handler
+	Do method [lvRow.evType] (lvDataList)
+	
+	;  Call the callback
+	If not(isnull(lvRow.callback))&len(lvRow.callback)>0     ;; If there is a full notation path to the callback
+		Do [lvRow.callback](lvDataList)
+	End If
+	Quit event handler (Discard event)

@@ -1,0 +1,11 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	
+	Do lvParamsRow.$define()
+	Do lvParamsRow.$cols.$add('callbackArgs',kCharacter,kSimplechar,1000)
+	Do lvParamsRow.$cols.$add('omnisCallback',kCharacter,kSimplechar,100000)
+	
+	Calculate lvParamsRow.callbackArgs as icCallbackData
+	Calculate lvParamsRow.omnisCallback as con($cinst().$fullname,'.$callmeFromJs')
+	
+	
+	Do irOBrowser.$callmethod('setCallBack',lvParamsRow)
