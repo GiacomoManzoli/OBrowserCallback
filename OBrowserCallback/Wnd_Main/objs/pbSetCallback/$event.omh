@@ -1,11 +1,12 @@
 On evClick     ;; Event Parameters - pRow( Itemreference )
-	
+	;
+	;  Defines a row with the events data
 	Do lvParamsRow.$define()
-	Do lvParamsRow.$cols.$add('callbackArgs',kCharacter,kSimplechar,1000)
-	Do lvParamsRow.$cols.$add('omnisCallback',kCharacter,kSimplechar,100000)
+	Do lvParamsRow.$cols.$add('callbackArgs',kCharacter,kSimplechar,1000)     ;; Optional string message to be passed back to the Omnis Method (it also could be of another data type)
+	Do lvParamsRow.$cols.$add('omnisCallback',kCharacter,kSimplechar,100000)     ;; Full notation to the Omnis method thats needed to be called from the OBrowser/HTMLControl
 	
 	Calculate lvParamsRow.callbackArgs as icCallbackData
-	Calculate lvParamsRow.omnisCallback as con($cinst().$fullname,'.$callmeFromJs')
+	Calculate lvParamsRow.omnisCallback as con($cinst().$fullname,'.$callmeFromJs')     ;; Path to the method that will be called from the HTMLControl.
 	
-	
+	;  Initialize the HTMLControl by setting the callback data.
 	Do irOBrowser.$callmethod('setCallBack',lvParamsRow)

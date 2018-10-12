@@ -36,7 +36,7 @@
 		"font": 2,
 		"fontsize": 0,
 		"fontstyle": "kPlain",
-		"height": 147,
+		"height": 199,
 		"helpfile": 0,
 		"hiliteline": false,
 		"htmlcontroloptions": null,
@@ -47,10 +47,10 @@
 		"statusevents": true,
 		"textcolor": "kColorWindowText",
 		"tooltip": "",
-		"top": 56,
-		"urlorcontrolname": "callback",
+		"top": 0,
+		"urlorcontrolname": "obrowserEvents",
 		"userinfo": "",
 		"visible": true,
-		"width": 419
+		"width": 644
 	}
 }

@@ -1,0 +1,9 @@
+;  Handler for html control component.
+Calculate lcData2 as pEventDataList.1.data1
+Calculate lcData1 as pEventDataList.1.data2
+
+Begin text block
+Text: {[lcData2] [lcData1]} (Carriage return,Linefeed)
+End text block
+Get text block lcText
+OK message Event data (Icon) {[lcText]}

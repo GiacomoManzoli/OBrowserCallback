@@ -3,8 +3,8 @@ On evControlEvent
 	
 	;  Convert the data from JSON to a List
 	Do OJSON.$jsontolistorrow(lvRow.data) Returns lvDataList
-	;  Call the callback
-	If not(isnull(lvRow.callback))&len(lvRow.callback)>0     ;; If there is a full notation path to the callback
-		Do [lvRow.callback](lvDataList)
-	End If
+	
+	;  Execute the method by matching its name
+	Do method [lvRow.evType] (lvDataList)
+	
 	Quit event handler (Discard event)

@@ -19,16 +19,9 @@
 		],
 		"lvardefs": [
 			{
-				"name": "lnCallId",
-				"order": 3,
-				"type": "kNumber",
-				"subtype": "k0dp",
-				"sublen": 0
-			},
-			{
-				"name": "lRow",
-				"order": 2,
-				"type": "kRow",
+				"name": "lvDataList",
+				"order": 4,
+				"type": "kList",
 				"subtype": "",
 				"sublen": 0
 			},
@@ -39,24 +32,6 @@
 				"subtype": "",
 				"sublen": 0
 			}
-		]
-	},
-	{
-		"name": "evCallFromOBrowser",
-		"ident": 2,
-		"order": 3,
-		"pvardefs": [
-			{
-				"name": "pDataList",
-				"order": 1,
-				"type": "kList",
-				"subtype": "",
-				"sublen": 0,
-				"param": 1
-			}
-		],
-		"lvardefs": [
-
 		]
 	}
 ]

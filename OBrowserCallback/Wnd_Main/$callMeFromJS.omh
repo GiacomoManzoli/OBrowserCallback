@@ -3,7 +3,7 @@ Calculate lcCallbackArgs as pEventDataList.1.callbackArgs
 
 Begin text block
 Text: {Data from the JS component: [lcCallData1]} (Carriage return,Linefeed)
-Text: {Data that Omnis sent as a "callback arguments": [lcCallbackArgs]} (Carriage return,Linefeed)
+Text: {Data that Omnis sent as a callback arguments: [lcCallbackArgs]} (Carriage return,Linefeed)
 End text block
 Get text block lcText
 OK message Callback Data (Icon) {[lcText]}

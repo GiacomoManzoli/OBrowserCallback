@@ -1,6 +1,6 @@
 {
 	"classtype": "kWindow",
-	"internalversion": 36,
+	"internalversion": 12,
 	"designtaskname": "Startup_Task",
 	"nextident": 1020,
 	"lastgroupident": 0,
@@ -8,13 +8,6 @@
 
 	],
 	"ivardefs": [
-		{
-			"name": "icCallbackData",
-			"order": 7,
-			"type": "kCharacter",
-			"subtype": "kSimplechar",
-			"sublen": 1000
-		},
 		{
 			"name": "irOBrowser",
 			"order": 8,
@@ -38,7 +31,7 @@
 		"componenticon": 0,
 		"componenttype": "kCompStoreHidden",
 		"contextmenu": "",
-		"createdate": "2018-10-01 20:53:06",
+		"createdate": "2018-10-12 14:03:15",
 		"desc": "",
 		"dockingedge": "kBorderChisel",
 		"dropmode": "kAcceptNone",
@@ -52,7 +45,7 @@
 		"growbox": true,
 		"hasmenus": false,
 		"hasstatusbar": false,
-		"height": 203,
+		"height": 199,
 		"helpbutton": false,
 		"helpfile": 0,
 		"horzgrid": 8,
@@ -66,7 +59,7 @@
 		"menunames": "",
 		"minimizebox": false,
 		"minimizeiconid": 2006,
-		"moddate": "2018-10-12 20:06:44",
+		"moddate": "2018-10-12 20:35:02",
 		"modelessdata": true,
 		"showascheckedout": false,
 		"showcommands": false,
@@ -87,7 +80,7 @@
 		"version": "",
 		"vertgrid": 8,
 		"vertscroll": false,
-		"width": 419,
+		"width": 644,
 		"zoombox": false
 	},
 	"statusbar": {

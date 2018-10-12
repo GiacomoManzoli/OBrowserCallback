@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <base href="/" />
+    <title>JavaScript events to Omnis</title>
+</head>
+
+<body>
+    <div>
+        <p id="myStatus">Fetching data... (1 second please!)</p>
+
+    </div>
+
+
+    <script>
+        // Detects the base URL of the page (served from vile)
+        var baseDir = document.location.protocol + "//" + document.location.host + document.location.pathname;
+
+        if (baseDir.substring(baseDir.length - 4) == ".htm") {
+            baseDir = baseDir.substring(0, baseDir.lastIndexOf("/"));
+        }
+        if (baseDir.substring(baseDir.length - 1) != "/") {
+            baseDir = baseDir + "/";
+        }
+
+        var base = document.getElementsByTagName("base");
+        base[0].href = baseDir;
+        console.log("Script baseDir: " + baseDir);
+    </script>
+
+    <!-- Includes the Omnis JS files -->
+    <script src="../omn_list_base.js" charset="utf-8"></script>
+    <script src="../omnishtmlcontrol.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        // Auxiliary method to wrap the jOmnis.sendControlEvent
+        // (used in the second example, it's just a convinience method, it's also possible to use the standard one)
+        var __sendControlEvent = function (evType, data, callback) {
+            console.log("Sending event", evType, data, callback);
+            var message = {
+                evType: evType
+            };
+            if (data !== undefined) {
+                message.data = (typeof (data) === "string") ? data : JSON.stringify(data);
+            }
+            if (callback !== undefined) {
+                message.callback = callback;
+            }
+            jOmnis.sendControlEvent(message);
+        };
+
+
+        var textLabel;
+        console.log("Script text!");
+
+        // Refefintion of the callbackObject required from Omnis
+        jOmnis.callbackObject = {
+
+            omnisOnLoad: function () {
+                console.log("OMNIS: onLoad");
+                textLabel = document.getElementById("myStatus");
+                
+                // Simulates an async operation 
+                setTimeout(function() {
+                    textLabel.innerText = "Data fetched!";
+                    var myData = {
+                        data1: "Hello",
+                        data2: "World!"
+                    };
+                    // Sends the event with the data back to Omnis 
+                    // (the event name matches the name of the handler in the OBrowser)
+                    __sendControlEvent('evDataReceived', myData);
+                }, 1000);
+            },
+
+        };
+
+    </script>
+
+
+
+</body>
+
+</html>
